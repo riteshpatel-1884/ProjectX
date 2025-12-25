@@ -157,7 +157,7 @@ Respond ONLY with the JSON array, no other text.`;
       setAiInsights(insights);
     } catch (error) {
       console.error('AI Insights error:', error);
-      setAiInsights([{
+      setAiInsights([{ 
         type: 'info',
         message: 'Unable to generate insights. Please try again later.'
       }]);

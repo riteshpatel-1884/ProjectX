@@ -24,20 +24,20 @@ export default function PricingPage() {
         </div>
 
         {/* Cards */}
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 md:grid-cols-2">
+        {/* <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 md:grid-cols-2"> */}
           {/* Monthly */}
           <div className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl shadow-lg">
-            <h2 className="text-xl font-semibold mb-2">Monthly</h2>
+            <h2 className="text-xl font-semibold mb-2">Buy Credit</h2>
 
             <div className="flex items-end gap-1 mb-6">
-              <span className="text-4xl font-bold">₹49</span>
-              <span className="text-white/60">/month</span>
+              <span className="text-4xl font-bold text-green-600">₹29</span>
+              {/* <span className="text-white/60">/month</span> */}
             </div>
 
             <ul className="space-y-3 text-sm text-white/80 mb-8">
-              <li>✔ Unlimited Todos</li>
+              <li>✔ 25,000 credits</li>
               <li>✔ Priority Support</li>
-              <li>✔ Cloud Sync</li>
+              <li>✔ Access to all feature using.</li>
               <li>✔ Future AI Features</li>
             </ul>
 
@@ -50,7 +50,7 @@ export default function PricingPage() {
           </div>
 
           {/* Yearly */}
-          <div className="relative rounded-2xl border border-pink-500/40 bg-gradient-to-br from-pink-500/10 to-purple-500/10 p-8 backdrop-blur-xl shadow-xl">
+          {/* <div className="relative rounded-2xl border border-pink-500/40 bg-gradient-to-br from-pink-500/10 to-purple-500/10 p-8 backdrop-blur-xl shadow-xl">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 px-4 py-1 text-xs font-semibold">
               BEST VALUE
             </span>
@@ -79,9 +79,9 @@ export default function PricingPage() {
             >
               Get Started
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
-    </div>
+    // </div>
   );
 }

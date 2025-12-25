@@ -79,7 +79,7 @@ export default function PlacementTracker() {
               <p className="text-purple-200 mt-1">Track my readiness for core interview subjects</p>
             </div>
             <span className="ml-auto px-3 py-1 bg-purple-500/30 text-purple-100 text-sm font-medium rounded-full backdrop-blur-sm border border-purple-400/30">
-              Core Subjects Only
+              Core Subjects + DSA
             </span>
           </div>
         </div>

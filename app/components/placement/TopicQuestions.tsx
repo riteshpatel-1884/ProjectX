@@ -193,7 +193,7 @@ export default function TopicQuestions({
                     </div>
 
                     {/* Key Points */}
-                    <div className="mb-4">
+                    {/* <div className="mb-4">
                       <button
                         onClick={() => toggleHint(q.id)}
                         className="text-sm font-semibold text-yellow-300 mb-2 flex items-center gap-2 hover:text-yellow-200 transition-colors"
@@ -212,13 +212,13 @@ export default function TopicQuestions({
                           ))}
                         </ul>
                       )}
-                    </div>
+                    </div> */}
 
                     {/* Follow-up */}
-                    <div className="bg-white/5 rounded-lg p-3 border border-white/10">
+                    {/* <div className="bg-white/5 rounded-lg p-3 border border-white/10">
                       <p className="text-xs font-semibold text-pink-300 mb-1">💡 Follow-up Question:</p>
                       <p className="text-sm text-purple-200 italic">{q.followUp}</p>
-                    </div>
+                    </div> */}
                   </div>
                 )}
               </div>

@@ -4,15 +4,89 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model User {
-  id               String   @id 
-  email            String   @unique
-  phoneNumber      String?  @unique
-  isSubscribed     Boolean  @default(false)
-  subscriptionEnds DateTime?
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
+  id          String   @id @default(uuid())
+  clerkUserId String   @unique
+  email       String?
+  name        String?
+  joinedAt    DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // New fields
+  totalCredit  Int     @default(50000)
+  userCredit   Int     @default(0)
+  isSubscribed Boolean @default(false)
+  role String @default("user")
+
+
+  // Optional contact & profile links
+  phoneNo     String?
+
+  // Ranking
+  rank Int?
+
+  // ✅ ADD THESE TWO LINES:
+  dsaProgress    DSAProgress?
+  problemsSolved DSAProblemSolved[]
+
+  @@index([clerkUserId])
 }
 
+
+
+model DSAProgress {
+  id        String   @id @default(uuid())
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Overall Progress
+  totalSolved    Int @default(0)
+  totalProblems  Int @default(100)
+  
+  // Difficulty-wise Progress
+  easySolved     Int @default(0)
+  easyTotal      Int @default(24)
+  mediumSolved   Int @default(0)
+  mediumTotal    Int @default(64)
+  hardSolved     Int @default(0)
+  hardTotal      Int @default(12)
+  
+  // Completion Percentage (0-100)
+  completionPercentage Float @default(0.0)
+  
+  // Last activity
+  lastSolvedAt DateTime?
+  
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([userId])
+  @@map("dsa_progress")
+}
+
+model DSAProblemSolved {
+  id         String   @id @default(uuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Problem Details
+  problemId  Int      // ID from the DSA_PROBLEMS array (1-100)
+  title      String
+  difficulty String   // Easy, Medium, Hard
+  category   String
+  
+  // When solved
+  solvedAt   DateTime @default(now())
+  
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([userId, problemId])
+  @@index([userId])
+  @@index([problemId])
+  @@map("dsa_problems_solved")
+}

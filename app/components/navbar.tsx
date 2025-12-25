@@ -67,6 +67,13 @@ export default function Navbar() {
             <Link href="pricing" className="text-sm text-gray-400 hover:text-white">
               Pricing
             </Link>
+            <Link href="dashboard" className="text-sm text-gray-400 hover:text-white">
+              Dashboard
+            </Link>
+            <Link href="100-most-asked-dsa-problems" className="text-sm text-gray-400 hover:text-white">
+              Most Asked DSA
+            </Link>
+            
             <UserButton/>
             {/* <button className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl blur opacity-50" />
