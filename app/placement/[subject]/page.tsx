@@ -1,0 +1,7 @@
+"use client";
+
+export default function SubjectPage() {
+  return <div>Subject Page Works</div>;
+}
+
+export {};
