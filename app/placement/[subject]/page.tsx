@@ -1,5 +1,9 @@
-"use client"
+"use client";
 
 export default function SubjectPage() {
-  return null;
+  return (
+    <div>
+      Subject Page Works
+    </div>
+  );
 }
