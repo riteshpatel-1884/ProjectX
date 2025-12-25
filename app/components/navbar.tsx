@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { GraduationCap, Sparkles, Menu, X, ChevronRight, Home, BarChart, DollarSign, LayoutDashboard, Code } from "lucide-react";
+import {Sparkles, Menu, X, ChevronRight, Home, BarChart, DollarSign, LayoutDashboard, Code, FileText  } from "lucide-react";
 import Image from "next/image"; 
 import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
@@ -32,7 +32,8 @@ export default function Navbar() {
     { href: "/placement", label: "Placement", icon: Home, description: "Career opportunities" },
     { href: "/pricing", label: "Pricing", icon: DollarSign, description: "View plans" },
     { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard, description: "Your overview" },
-    { href: "/100-most-asked-dsa-problems", label: "Most Asked DSA", icon: Code, description: "Practice coding" }
+    { href: "/100-most-asked-dsa-problems", label: "Most Asked DSA", icon: Code, description: "Practice coding" },
+    { href: "/analyse-my-resume", label: "Analyse My Resume", icon: FileText, description: "Optimize my resume" }
   ];
 
   return (

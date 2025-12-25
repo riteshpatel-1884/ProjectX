@@ -42,7 +42,7 @@ const DSA_PROBLEMS: Problem[] = [
     category: "Linked List",
     solved: false,
   },
-  {
+ {
     id: 2,
     title: "Cycle Detection in Singly Linked List",
     difficulty: "Medium",
@@ -1179,44 +1179,43 @@ The user is tracking ${problems.length} of the most frequently asked interview p
     );
   }
 
+  
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-900 to-violet-950 text-white p-6">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-900 to-violet-950 text-white p-3 sm:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header with Glow Effect */}
-        <div className="mb-8 relative pt-24">
+        <div className="mb-6 sm:mb-8 relative pt-4 sm:pt-8 mt-24">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 blur-3xl -z-10"></div>
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h1 className="text-5xl font-bold mb-3 flex items-center gap-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-200 via-pink-200 to-purple-200">
-               
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-4">
+            <div className="w-full sm:w-auto">
+              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-200 via-pink-200 to-purple-200">
                 Top 100 DSA Problems
               </h1>
-              <p className="text-purple-300 flex items-center gap-2 text-lg">
-                
+              <p className="text-purple-300 flex items-center gap-2 text-sm sm:text-base lg:text-lg">
                 Master the most frequently asked interview questions
               </p>
             </div>
-            <div className="flex gap-3">
+            <div className="w-full sm:w-auto">
               <button 
                 onClick={() => setIsChatOpen(true)}
-                className="bg-gradient-to-r from-emerald-500 to-cyan-500 px-8 py-4 rounded-xl font-bold hover:shadow-2xl hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300 flex items-center gap-2"
+                className="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-cyan-500 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-bold hover:shadow-2xl hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base"
               >
-                <MessageSquare className="w-5 h-5" />
+                <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
                 AI Assistant
               </button>
             </div>
           </div>
 
           {/* Enhanced Progress Section */}
-          <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl mb-8">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <Target className="w-6 h-6 text-purple-300" />
-                <h2 className="text-xl font-bold">Your Progress</h2>
+          <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-white/20 shadow-2xl mb-6 sm:mb-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-3">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <Target className="w-5 h-5 sm:w-6 sm:h-6 text-purple-300" />
+                <h2 className="text-lg sm:text-xl font-bold">Your Progress</h2>
               </div>
-              <div className="flex items-center gap-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-4 py-2 rounded-lg border border-purple-400/30">
-                <Award className="w-5 h-5 text-yellow-400" />
-                <span className="font-bold text-lg">{stats.completionPercentage}% Complete</span>
+              <div className="flex items-center gap-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg border border-purple-400/30">
+                <Award className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
+                <span className="font-bold text-base sm:text-lg">{stats.completionPercentage}% Complete</span>
               </div>
             </div>
 
@@ -1287,44 +1286,44 @@ The user is tracking ${problems.length} of the most frequently asked interview p
           </div>
 
           {/* Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-            <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 backdrop-blur-xl rounded-xl p-5 border border-cyan-400/30 shadow-lg hover:shadow-cyan-500/30 transition-all hover:scale-105">
-              <div className="text-cyan-300 text-4xl font-bold mb-1">{stats.totalProblems}</div>
-              <div className="text-purple-200 text-sm font-medium">Total Problems</div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
+            <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 backdrop-blur-xl rounded-xl p-4 sm:p-5 border border-cyan-400/30 shadow-lg hover:shadow-cyan-500/30 transition-all hover:scale-105">
+              <div className="text-cyan-300 text-2xl sm:text-3xl lg:text-4xl font-bold mb-1">{stats.totalProblems}</div>
+              <div className="text-purple-200 text-xs sm:text-sm font-medium">Total Problems</div>
             </div>
-            <div className="bg-gradient-to-br from-emerald-500/20 to-green-500/20 backdrop-blur-xl rounded-xl p-5 border border-emerald-400/30 shadow-lg hover:shadow-emerald-500/30 transition-all hover:scale-105">
-              <div className="text-emerald-300 text-4xl font-bold mb-1">{stats.solvedProblems}</div>
-              <div className="text-purple-200 text-sm font-medium">Problems Solved</div>
+            <div className="bg-gradient-to-br from-emerald-500/20 to-green-500/20 backdrop-blur-xl rounded-xl p-4 sm:p-5 border border-emerald-400/30 shadow-lg hover:shadow-emerald-500/30 transition-all hover:scale-105">
+              <div className="text-emerald-300 text-2xl sm:text-3xl lg:text-4xl font-bold mb-1">{stats.solvedProblems}</div>
+              <div className="text-purple-200 text-xs sm:text-sm font-medium">Problems Solved</div>
             </div>
-            <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl rounded-xl p-5 border border-purple-400/30 shadow-lg hover:shadow-purple-500/30 transition-all hover:scale-105">
-              <div className="text-purple-300 text-4xl font-bold mb-1">{stats.totalFrequency.toLocaleString()}</div>
-              <div className="text-purple-200 text-sm font-medium">Total Frequency</div>
+            <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl rounded-xl p-4 sm:p-5 border border-purple-400/30 shadow-lg hover:shadow-purple-500/30 transition-all hover:scale-105">
+              <div className="text-purple-300 text-2xl sm:text-3xl lg:text-4xl font-bold mb-1">{stats.totalFrequency.toLocaleString()}</div>
+              <div className="text-purple-200 text-xs sm:text-sm font-medium">Total Frequency</div>
             </div>
-            <div className="bg-gradient-to-br from-orange-500/20 to-red-500/20 backdrop-blur-xl rounded-xl p-5 border border-orange-400/30 shadow-lg hover:shadow-orange-500/30 transition-all hover:scale-105">
-              <div className="text-orange-300 text-4xl font-bold mb-1">{companies.length}</div>
-              <div className="text-purple-200 text-sm font-medium">Top Companies</div>
+            <div className="bg-gradient-to-br from-orange-500/20 to-red-500/20 backdrop-blur-xl rounded-xl p-4 sm:p-5 border border-orange-400/30 shadow-lg hover:shadow-orange-500/30 transition-all hover:scale-105">
+              <div className="text-orange-300 text-2xl sm:text-3xl lg:text-4xl font-bold mb-1">{companies.length}</div>
+              <div className="text-purple-200 text-xs sm:text-sm font-medium">Top Companies</div>
             </div>
           </div>
         </div>
 
         {/* Filters */}
-        <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl mb-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-4 sm:p-6 border border-white/20 shadow-2xl mb-4 sm:mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-purple-300" />
+              <Search className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-purple-300" />
               <input
                 type="text"
                 placeholder="Search problems..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-white/10 border border-white/30 rounded-xl pl-12 pr-4 py-3 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all"
+                className="w-full bg-white/10 border border-white/30 rounded-xl pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all"
               />
             </div>
 
             <select
               value={selectedDifficulty}
               onChange={(e) => setSelectedDifficulty(e.target.value)}
-              className="bg-white/10 border border-white/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all cursor-pointer"
+              className="bg-white/10 border border-white/30 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all cursor-pointer"
             >
               <option value="all" className="bg-purple-900">All Difficulties</option>
               <option value="Easy" className="bg-purple-900">Easy</option>
@@ -1335,7 +1334,7 @@ The user is tracking ${problems.length} of the most frequently asked interview p
             <select
               value={selectedCompany}
               onChange={(e) => setSelectedCompany(e.target.value)}
-              className="bg-white/10 border border-white/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all cursor-pointer"
+              className="bg-white/10 border border-white/30 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all cursor-pointer"
             >
               <option value="all" className="bg-purple-900">All Companies</option>
               {companies.map(company => (
@@ -1346,7 +1345,7 @@ The user is tracking ${problems.length} of the most frequently asked interview p
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="bg-white/10 border border-white/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all cursor-pointer"
+              className="bg-white/10 border border-white/30 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base text-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all cursor-pointer"
             >
               <option value="frequency" className="bg-purple-900">Most Asked First</option>
               <option value="difficulty" className="bg-purple-900">By Difficulty</option>
@@ -1355,47 +1354,48 @@ The user is tracking ${problems.length} of the most frequently asked interview p
         </div>
 
         {/* Problems List */}
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {filteredAndSortedProblems.map((problem, index) => (
             <div
               key={problem.id}
-              className={`bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border transition-all duration-300 hover:scale-[1.02] cursor-pointer group ${
+              className={`bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-6 border transition-all duration-300 hover:scale-[1.01] cursor-pointer group ${
                 problem.solved 
                   ? 'border-emerald-400/50 shadow-lg shadow-emerald-500/20' 
                   : 'border-white/20 hover:border-purple-400/50 hover:shadow-2xl hover:shadow-purple-500/20'
               }`}
             >
-              <div className="flex items-start gap-5">
-                <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-xl flex items-center justify-center font-bold text-xl border border-purple-400/30 group-hover:scale-110 transition-transform">
+              <div className="flex items-start gap-3 sm:gap-5">
+                <div className="flex-shrink-0 w-10 h-10 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-lg sm:rounded-xl flex items-center justify-center font-bold text-base sm:text-xl border border-purple-400/30 group-hover:scale-110 transition-transform">
                   {index + 1}
                 </div>
                 
-                <div className="flex-grow">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl font-bold text-white group-hover:text-purple-200 transition-colors">{problem.title}</h3>
-                    <div className="flex items-center gap-3">
-                      <span className={`px-4 py-1.5 rounded-lg text-sm font-semibold border ${getDifficultyBg(problem.difficulty)}`}>
+                <div className="flex-grow min-w-0">
+                  <div className="flex items-start justify-between mb-2 sm:mb-3 gap-2">
+                    <h3 className="text-base sm:text-xl font-bold text-white group-hover:text-purple-200 transition-colors flex-1 min-w-0 break-words">{problem.title}</h3>
+                    <div className="flex flex-col sm:flex-row items-end sm:items-center gap-2 flex-shrink-0">
+                      <span className={`px-2 sm:px-4 py-1 sm:py-1.5 rounded-lg text-xs sm:text-sm font-semibold border whitespace-nowrap ${getDifficultyBg(problem.difficulty)}`}>
                         {problem.category}
                       </span>
-                      <span className={`font-bold text-lg ${getDifficultyColor(problem.difficulty)}`}>
+                      <span className={`font-bold text-sm sm:text-lg ${getDifficultyColor(problem.difficulty)} whitespace-nowrap`}>
                         {problem.difficulty}
                       </span>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-6 text-sm text-purple-200 mb-4">
-                    <div className="flex items-center gap-2 bg-cyan-500/20 px-3 py-1.5 rounded-lg border border-cyan-400/30">
-                      <TrendingUp className="w-4 h-4 text-cyan-400" />
+                  <div className="flex items-center gap-3 sm:gap-6 text-xs sm:text-sm text-purple-200 mb-3 sm:mb-4">
+                    <div className="flex items-center gap-1.5 sm:gap-2 bg-cyan-500/20 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-cyan-400/30">
+                      <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400 flex-shrink-0" />
                       <span className="font-bold text-cyan-300">{problem.frequency}</span>
-                      <span>times asked</span>
+                      <span className="hidden sm:inline">times asked</span>
+                      <span className="sm:hidden">asked</span>
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {problem.companies.map(company => (
                       <span
                         key={company}
-                        className="bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-400/40 px-3 py-1.5 rounded-lg text-xs font-semibold hover:scale-105 transition-transform"
+                        className="bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-400/40 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-xs font-semibold hover:scale-105 transition-transform"
                       >
                         {company}
                       </span>
@@ -1405,7 +1405,7 @@ The user is tracking ${problems.length} of the most frequently asked interview p
 
                 <button
                   onClick={() => toggleSolved(problem.id)}
-                  className={`flex-shrink-0 w-12 h-12 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center ${
+                  className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl font-semibold transition-all duration-300 flex items-center justify-center ${
                     problem.solved
                       ? 'bg-emerald-500/30 border-2 border-emerald-400 hover:bg-emerald-500/40 shadow-lg shadow-emerald-500/30'
                       : 'bg-white/10 border-2 border-white/30 hover:bg-white/20 hover:border-purple-400'
@@ -1413,9 +1413,9 @@ The user is tracking ${problems.length} of the most frequently asked interview p
                   aria-label={problem.solved ? "Mark as unsolved" : "Mark as solved"}
                 >
                   {problem.solved ? (
-                    <CheckCircle className="w-7 h-7 text-emerald-400" />
+                    <CheckCircle className="w-5 h-5 sm:w-7 sm:h-7 text-emerald-400" />
                   ) : (
-                    <Circle className="w-7 h-7 text-white/50" />
+                    <Circle className="w-5 h-5 sm:w-7 sm:h-7 text-white/50" />
                   )}
                 </button>
               </div>
@@ -1424,29 +1424,28 @@ The user is tracking ${problems.length} of the most frequently asked interview p
         </div>
       </div>
 
-   {/* AI Chat Modal */}
+      {/* AI Chat Modal */}
       {isChatOpen && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 p-3">
-          <div className="bg-gradient-to-br from-purple-900/98 to-indigo-900/98 backdrop-blur-2xl rounded-3xl border border-purple-500/30 shadow-[0_0_50px_rgba(168,85,247,0.4)] w-full max-w-4xl h-[85vh] flex flex-col overflow-hidden">
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 p-2 sm:p-3">
+          <div className="bg-gradient-to-br from-purple-900/98 to-indigo-900/98 backdrop-blur-2xl rounded-2xl sm:rounded-3xl border border-purple-500/30 shadow-[0_0_50px_rgba(168,85,247,0.4)] w-full max-w-4xl h-[90vh] sm:h-[85vh] flex flex-col overflow-hidden">
             {/* Chat Header */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-purple-500/20 bg-gradient-to-r from-purple-800/40 to-indigo-800/40">
-              <div className="flex items-center gap-3">
-                <div className="bg-gradient-to-br from-purple-500 to-pink-500 p-2.5 rounded-xl shadow-lg shadow-purple-500/50">
-                  <Sparkles className="w-5 h-5 text-white" />
+            <div className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 border-b border-purple-500/20 bg-gradient-to-r from-purple-800/40 to-indigo-800/40">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="bg-gradient-to-br from-purple-500 to-pink-500 p-2 sm:p-2.5 rounded-lg sm:rounded-xl shadow-lg shadow-purple-500/50">
+                  <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">AI DSA Assistant</h3>
-                  <p className="text-xs text-purple-300">Your personal coding interview coach</p>
+                  <h3 className="text-base sm:text-lg font-bold text-white">AI DSA Assistant</h3>
+                  <p className="text-xs text-purple-300 hidden sm:block">Your personal coding interview coach</p>
                 </div>
               </div>
               <button
                 onClick={() => setIsChatOpen(false)}
-                className="p-2 hover:bg-white/10 rounded-xl transition-all hover:rotate-90 duration-300"
+                className="p-1.5 sm:p-2 hover:bg-white/10 rounded-lg sm:rounded-xl transition-all hover:rotate-90 duration-300"
               >
-                <X className="w-5 h-5 text-purple-200" />
+                <X className="w-4 h-4 sm:w-5 sm:h-5 text-purple-200" />
               </button>
             </div>
-
             {/* Chat Messages - Custom scrollbar hidden */}
             <div className="flex-1 overflow-y-auto px-6 py-4 space-y-3 scrollbar-hide" style={{
               scrollbarWidth: 'none',
