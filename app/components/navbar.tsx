@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect, } from "react";
-import Image from "next/image";
+import { useState, useEffect } from "react";
+import { GraduationCap, Sparkles, Menu, X, ChevronRight, Home, BarChart, DollarSign, LayoutDashboard, Code } from "lucide-react";
+import Image from "next/image"; 
 import Link from "next/link";
-import { GraduationCap, Sparkles, Menu, X } from "lucide-react";
 import { UserButton } from "@clerk/nextjs";
 
 export default function Navbar() {
@@ -16,79 +16,165 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
+  const navLinks = [
+    { href: "/attendance-tracker", label: "Attendance", icon: BarChart, description: "Track your attendance" },
+    { href: "/placement", label: "Placement", icon: Home, description: "Career opportunities" },
+    { href: "/pricing", label: "Pricing", icon: DollarSign, description: "View plans" },
+    { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard, description: "Your overview" },
+    { href: "/100-most-asked-dsa-problems", label: "Most Asked DSA", icon: Code, description: "Practice coding" }
+  ];
+
   return (
-    <header
-      className={`fixed w-full top-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-[#0a0a0f]/60 backdrop-blur-2xl border-b border-white/5"
-          : ""
-      }`}
-    >
-      <nav className="container mx-auto px-6 py-5">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="block">
-          <div className="flex items-center gap-3">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 blur-lg opacity-50" />
+    <>
+      <style jsx>{`
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
+    
+      <header
+        className={`fixed w-full top-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? "bg-[#0a0a0f]/80 backdrop-blur-2xl border-b border-white/5"
+            : "bg-transparent"
+        }`}
+      >
+        <nav className="container mx-auto px-6 py-5">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+           <Link href="/" className="block"> <div className="flex items-center gap-3"> <div className="relative"> <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 blur-lg opacity-50" /> </div> <div> <div className="flex items-center gap-1"> <Image src="/icon.png" alt="Project X logo" width={132} height={132} className="-mr-1" /> {/* <span className="text-xs px-2 py-0.5 rounded bg-purple-600 text-white"> AI </span> */} </div> <div className="flex items-center gap-1 mt-0.5"> <Sparkles className="w-3 h-3 text-purple-400" /> <span className="text-[10px] text-purple-400 font-medium"> Built for students. Designed for growth </span> </div> </div> </div> </Link>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-gray-400 hover:text-white transition-colors relative group"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 group-hover:w-full transition-all duration-300" />
+                </a>
+              ))}
               
+             <UserButton/>
             </div>
-            <div>
-              <div className="flex items-center gap-1">
-                <Image
-                  src="/icon.png"
-                  alt="Project X logo"
-                  width={132}
-                  height={132}
-                  className="-mr-1"
-                />
-                {/* <span className="text-xs px-2 py-0.5 rounded bg-purple-600 text-white">
-                  AI
-                </span> */}
-              </div>
-              <div className="flex items-center gap-1 mt-0.5">
-                <Sparkles className="w-3 h-3 text-purple-400" />
-                <span className="text-[10px] text-purple-400 font-medium">
-                  Built for students. Designed for growth
-                </span>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden relative z-[60] p-2 rounded-lg hover:bg-white/5 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <X className="w-6 h-6 text-white" />
+              ) : (
+                <Menu className="w-6 h-6 text-white" />
+              )}
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/70 backdrop-blur-md z-[55] md:hidden transition-opacity duration-300 ${
+          isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setIsMenuOpen(false)}
+      />
+
+      {/* Mobile Menu Panel */}
+      <div
+        className={`fixed top-0 right-0 h-full w-[85%] max-w-sm bg-slate-950 z-[55] md:hidden transform transition-transform duration-300 ease-out border-l border-slate-800/50 ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex flex-col h-full relative">
+          {/* Subtle gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-950/20 via-transparent to-purple-950/20 pointer-events-none" />
+          
+          {/* Menu Header */}
+          <div className="relative pt-16 pb-1 px-6 border-b border-slate-800/70">
+            <div className="flex items-center gap-3 mb-3">
+             
+              <div>
+                <Image src="/icon.png" alt="Project X logo" width={132} height={132} className="-mr-1" />
+             
+                <p className="text-sm text-slate-300 block pb-1">Scroll down for more option</p>
+             
               </div>
             </div>
           </div>
-          </Link>
 
-        
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="attendance-tracker" className="text-sm text-gray-400 hover:text-white">
-              Attendance
-            </Link>
-            <Link href="placement" className="text-sm text-gray-400 hover:text-white">
-              Placement
-            </Link>
-            <Link href="pricing" className="text-sm text-gray-400 hover:text-white">
-              Pricing
-            </Link>
-            <Link href="dashboard" className="text-sm text-gray-400 hover:text-white">
-              Dashboard
-            </Link>
-            <Link href="100-most-asked-dsa-problems" className="text-sm text-gray-400 hover:text-white">
-              Most Asked DSA
-            </Link>
+          {/* Menu Links - Added hide-scrollbar class */}
+          <div className="relative flex-1 overflow-y-auto py-6 px-6 hide-scrollbar">
+              
+            <div className="space-y-2">
+              {navLinks.map((link, index) => {
+                const Icon = link.icon;
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="group flex items-center gap-4 p-4 rounded-2xl bg-slate-900/50 hover:bg-slate-900 border border-slate-800/50 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/5"
+                    style={{ animationDelay: `${index * 50}ms` }}
+                  >
+                    <div className="relative flex-shrink-0">
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-lg blur group-hover:blur-md transition-all" />
+                      <div className="relative w-10 h-10 rounded-lg bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center border border-slate-700/50 group-hover:border-slate-600 transition-all">
+                        <Icon className="w-5 h-5 text-slate-400 group-hover:text-blue-400 transition-colors" />
+                      </div>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <span className="text-white font-medium block">{link.label}</span>
+                      <span className="text-xs text-slate-500 block truncate">{link.description}</span>
+                    </div>
+                    <ChevronRight className="w-5 h-5 text-slate-600 group-hover:text-slate-400 group-hover:translate-x-1 transition-all flex-shrink-0" />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Menu Footer */}
+          <div className="relative p-6 border-t border-slate-800/70 bg-slate-950/50">
             
-            <UserButton/>
-            {/* <button className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl blur opacity-50" />
-              <div className="relative bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-2.5 rounded-xl text-sm font-medium">
-                Get Started
+            <div className="flex items-center justify-center gap-3 p-3 rounded-xl bg-slate-900/50 border border-slate-800/50">
+              
+              <div className="flex-1">
+  <div className="flex items-center gap-1">
+    <span className="relative flex h-2 w-2">
+      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+    </span>
+    <span className="text-sm text-green-400 font-medium">Signed is as</span>
+  </div>
+  
+</div>
+<div className="w-9 h-9 rounded-full  text-sm shadow-lg">
+                <UserButton/>
               </div>
-            </button> */}
+            </div>
           </div>
-
-         
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden">
-            {isMenuOpen ? <X /> : <Menu />}
-          </button>
         </div>
-      </nav>
-    </header>
+      </div>
+    </>
   );
 }
