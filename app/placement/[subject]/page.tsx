@@ -1,7 +1,3 @@
-"use client";
-
-export default function SubjectPage() {
-  return <div>Subject Page Works</div>;
+export default function Page() {
+  return <div>Subject</div>;
 }
-
-export {};
