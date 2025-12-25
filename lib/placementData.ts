@@ -439,19 +439,23 @@ export const SUBJECTS_DATA: Record<string, Subject> = {
   }
 };
 
-// Helper function to get topic by subject and slug
-export function getTopicBySlug(subjectKey: string, topicSlug: string) {
-  const subject = SUBJECTS_DATA[subjectKey];
-  if (!subject) return null;
-  return subject.topics.find(topic => topic.slug === topicSlug);
+// Helper function to get topic by slug (searches across all subjects)
+export function getTopicBySlug(topicSlug: string): { topic: Topic; subjectKey: string; subject: Subject } | null {
+  for (const [subjectKey, subject] of Object.entries(SUBJECTS_DATA)) {
+    const topic = subject.topics.find(t => t.slug === topicSlug);
+    if (topic) {
+      return { topic, subjectKey, subject };
+    }
+  }
+  return null;
 }
 
 // Helper function to get all topic slugs for static generation
 export function getAllTopicSlugs() {
-  const slugs: { subject: string; topic: string }[] = [];
+  const slugs: string[] = [];
   Object.keys(SUBJECTS_DATA).forEach(subjectKey => {
     SUBJECTS_DATA[subjectKey].topics.forEach(topic => {
-      slugs.push({ subject: subjectKey, topic: topic.slug });
+      slugs.push(topic.slug);
     });
   });
   return slugs;
