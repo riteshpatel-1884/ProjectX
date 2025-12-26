@@ -27,26 +27,26 @@ export default function PricingPage() {
         {/* <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 md:grid-cols-2"> */}
           {/* Monthly */}
           <div className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl shadow-lg">
-            <h2 className="text-xl font-semibold mb-2">Buy Credit</h2>
+            <h2 className="text-xl font-semibold mb-2">Join waitlist to get early access and 50,000 credit</h2>
 
             <div className="flex items-end gap-1 mb-6">
-              <span className="text-4xl font-bold text-green-600">₹29</span>
+              <span className="text-4xl font-bold text-green-600">₹0</span>
               {/* <span className="text-white/60">/month</span> */}
             </div>
 
             <ul className="space-y-3 text-sm text-white/80 mb-8">
-              <li>✔ 25,000 credits</li>
+              <li>✔ 50,000 credits</li>
               <li>✔ Priority Support</li>
-              <li>✔ Access to all feature using.</li>
+              <li>✔ Access to all feature</li>
               <li>✔ Future AI Features</li>
             </ul>
 
-            <Link
+            {/* <Link
               href="/checkout?plan=monthly"
               className="block w-full rounded-xl border border-white/20 py-3 text-center font-medium hover:bg-white/10 transition"
             >
               Get Started
-            </Link>
+            </Link> */}
           </div>
 
           {/* Yearly */}

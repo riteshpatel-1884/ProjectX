@@ -58,7 +58,43 @@ export default function CampusMateHome() {
     },
     
   ];
-
+const WaitlistBadgeAlt = () => {
+  return (
+    <div className="inline-flex items-center gap-4 px-6 py-4 bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl shadow-xl ">
+      {/* Avatar Stack with Counter */}
+      <div className="relative">
+        <div className="flex -space-x-3">
+          {[
+            { letter: 'SS', bg: 'bg-blue-500' },
+            { letter: 'BK', bg: 'bg-purple-500' },
+            { letter: 'RY', bg: 'bg-indigo-500' }
+          ].map((avatar, i) => (
+            <div 
+              key={i} 
+              className={`w-11 h-11 rounded-full ${avatar.bg} border-3 border-white flex items-center justify-center text-sm font-semibold text-white shadow-lg`}
+            >
+              {avatar.letter}
+            </div>
+          ))}
+        </div>
+        <div className="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center text-xs font-bold text-white shadow-md border-2 border-white">
+          7
+        </div>
+      </div>
+      
+      {/* Text Content */}
+      <div className="flex flex-col">
+        <div className="flex items-center gap-2">
+          <span className="text-base font-bold text-white">7 on waitlist</span>
+          <span className="px-2 py-0.5 text-xs font-medium text-emerald-400 bg-emerald-400/10 rounded-full border border-emerald-400/20">
+            Active
+          </span>
+        </div>
+        <p className="text-sm text-slate-400">Join the waitlist for early access</p>
+      </div>
+    </div>
+  );
+};
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-white overflow-hidden">
       {/* Animated Gradient Mesh Background */}
@@ -110,19 +146,8 @@ export default function CampusMateHome() {
               </div> */}
 
               {/* Trust Indicators */}
-              <div className="flex items-center gap-6">
-                <div className="flex -space-x-3">
-                  {[1,2,3,4].map(i => (
-                    <div key={i} className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 border-2 border-[#0a0a0f] flex items-center justify-center text-xs font-bold">
-                      {String.fromCharCode(64 + i)}
-                    </div>
-                  ))}
-                </div>
-                <div>
-                  <div className="text-sm font-semibold">100+ Students</div>
-                  <div className="text-xs text-gray-500">Trusted by Students</div>
-                </div>
-              </div>
+               <WaitlistBadgeAlt />
+
             </div>
 
             {/* Right - Live Attendance Demo */}
@@ -230,10 +255,10 @@ export default function CampusMateHome() {
       <section id="features" className="py-20 px-6 relative">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full mb-4">
+            {/* <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full mb-4">
               <Sparkles className="w-4 h-4 text-purple-400" />
               <span className="text-purple-400 text-sm font-medium">Powered by Advanced AI</span>
-            </div>
+            </div> */}
             <h2 className="text-5xl font-bold mb-4">
               Intelligence meets
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"> simplicity</span>
@@ -276,18 +301,20 @@ export default function CampusMateHome() {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl blur-2xl opacity-20" />
             <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl rounded-3xl p-12 border border-white/20 text-center">
-              <Sparkles className="w-12 h-12 mx-auto mb-4 text-purple-400" />
+             
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 Ready to transform your college experience?
               </h2>
               <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
                 Join 5000+ students using AI to stay ahead in academics and placements
               </p>
-              <button className="group relative">
+              <button className="group relative cursor-pointer">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
                 <div className="relative bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-4 rounded-2xl font-semibold flex items-center gap-2 mx-auto w-fit">
-                  Start Your Free Trial
-                  <Sparkles className="w-5 h-5" />
+                  <Link href="/attendance-tracker">
+                       Join the waitlist now
+                  </Link>
+                  
                 </div>
               </button>
             </div>
