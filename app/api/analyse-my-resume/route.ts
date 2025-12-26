@@ -63,8 +63,7 @@ async function analyzeResume(
     "atsScore": number (0-100),
     "strengths": string[] (at least 5-7 specific strengths),
     "weaknesses": string[] (at least 5-7 specific areas to improve),
-    "additions": string[] (5-10 specific things to add to the resume),
-    "deletions": string[] (3-5 specific things to remove or de-emphasize),
+    "additions": string[] (5-7 specific things to add to the resume),
     "keywordAnalysis": { 
       "matched": string[] (keywords found in resume), 
       "missing": string[] (important keywords missing),
@@ -99,11 +98,10 @@ async function analyzeResume(
   2. Specific strengths (be detailed)
   3. Specific weaknesses (be detailed)  
   4. Exact additions needed (be specific about what to add and where)
-  5. Exact deletions needed (be specific about what to remove)
-  6. Keyword match analysis with percentages
-  7. Section-by-section breakdown with scores
-  8. Prioritized action items
-  9. Critical red flags
+  5. Keyword match analysis with percentages
+  6. Section-by-section breakdown with scores
+  7. Prioritized action items
+  8. Critical red flags
   
   Make the analysis as detailed and actionable as possible.`;
 

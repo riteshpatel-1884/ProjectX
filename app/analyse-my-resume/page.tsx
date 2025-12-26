@@ -687,6 +687,14 @@ export default function ResumeAnalyser() {
                 Analyze Another Resume
               </button>
             </div>
+            <div className="flex justify-center pt-6">
+              <button
+                
+              >
+                
+               Report any problem at ritesh20047@gmail.com
+              </button>
+            </div>
           </div>
         )}
       </div>
