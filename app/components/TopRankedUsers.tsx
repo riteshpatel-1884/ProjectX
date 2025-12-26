@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getRankedUsers } from "../dashboard/getRankedUsers";
+import { getRankedUsers } from "../_dashboard/getRankedUsers";
 import { Users } from "lucide-react";
 
 type User = {

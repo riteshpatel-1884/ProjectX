@@ -25,17 +25,12 @@ export default function Footer() {
   </span> */}
 </div>
 
-         
-     
-      <div><p className="text-sm text-gray-400 leading-relaxed">
-        Built for students • Designed for growth
-      </p></div>
    
   </div>
 </Link>
 
           {/* Features */}
-          <div>
+          {/* <div>
             <h4 className="text-sm font-semibold text-white mb-4">Features</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
@@ -59,10 +54,10 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Resources */}
-          <div>
+          {/* <div>
             <h4 className="text-sm font-semibold text-white mb-4">Resources</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
@@ -81,18 +76,18 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Legal / Contact */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Company</h4>
+            <h4 className="text-sm font-semibold text-white mb-4">Quick Link</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <Link href="/about" className="hover:text-white transition">
-                  About
+                <Link href="/analyse-my-resume" className="hover:text-white transition">
+                  Analyse My Resume
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/privacy" className="hover:text-white transition">
                   Privacy Policy
                 </Link>
@@ -101,9 +96,10 @@ export default function Footer() {
                 <Link href="/terms" className="hover:text-white transition">
                   Terms & Conditions
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
+          
         </div>
 
         {/* Bottom bar */}
