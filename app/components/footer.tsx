@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="mb-4 cursor-pointer">
            <div className="flex items-center gap-1">
   <Image
-    src="/icon.png"
+    src="/logo/logo.png"
     alt="Project X logo"
     width={132}
     height={132}
@@ -105,7 +105,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/5 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-sm">
-            © 2025 Project X. All rights reserved.
+            © 2025 LeaderLab. All rights reserved.
           </p>
           <p className="text-gray-500 text-sm">
             Built for students • Designed for growth

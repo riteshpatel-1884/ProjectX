@@ -47,7 +47,7 @@ export default function NavigationLoader() {
         {/* AI-style text */}
         <div className="flex flex-col items-center gap-3">
           <div className="flex items-center gap-2">
-            <span className="text-white font-semibold text-lg tracking-wider">ProjectX</span>
+            <span className="text-white font-semibold text-lg tracking-wider">LeaderLab</span>
             <div className="flex gap-1">
               <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce-dot-1"></span>
               <span className="w-2 h-2 bg-purple-500 rounded-full animate-bounce-dot-2"></span>

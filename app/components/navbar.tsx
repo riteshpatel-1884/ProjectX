@@ -66,7 +66,7 @@ export default function Navbar() {
                 <div>
                   <div className="flex items-center gap-1">
                     <Image 
-                      src="/icon.png" 
+                      src="/logo/logo.png" 
                       alt="Project X logo" 
                       width={132} 
                       height={132} 
